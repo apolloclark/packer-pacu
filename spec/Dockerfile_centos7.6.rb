@@ -43,7 +43,7 @@ describe "Dockerfile" do
 
   describe command("python --version") do
     its(:exit_status) { should eq 0 }
-    its(:stdout) { should contain ENV['PACKAGE_VERSION'] }
+    its(:stdout) { should contain '3.7.3' }
   end
   describe command("pip --version") do
     its(:exit_status) { should eq 0 }
