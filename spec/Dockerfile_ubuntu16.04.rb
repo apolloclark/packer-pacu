@@ -8,7 +8,10 @@ Docker.validate_version!
 describe "Dockerfile" do
   before(:all) do
     image = Docker::Image.get(
-      ENV['DOCKER_USERNAME'] + "/" + ENV['PACKAGE'] + ":" + ENV['PACKAGE_VERSION'] + "-" + ENV['IMAGE_NAME']
+      ENV['DOCKER_USERNAME'] + "/" + \
+      ENV['PACKAGE_NAME'] + ":" + \
+      ENV['PACKAGE_VERSION'] + "-" + \
+      ENV['IMAGE_NAME']
     )
 
     # https://github.com/mizzy/specinfra
@@ -43,7 +46,6 @@ describe "Dockerfile" do
 
   describe command("python --version") do
     its(:exit_status) { should eq 0 }
-    its(:stdout) { should contain "3.7.3" }
   end
 
   describe command("pip --version") do
