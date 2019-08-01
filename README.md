@@ -13,7 +13,7 @@ Packer, Ansible, Serverspec, project to create RhinoSecurityLabs/Pacu VM, AWS AM
 
 ## Install
 ```shell
-git clone https://github.com/apolloclark/packer-pacu
+git clone --recurse-submodules https://github.com/apolloclark/packer-pacu
 cd ./packer-pacu
 
 # update submodules
