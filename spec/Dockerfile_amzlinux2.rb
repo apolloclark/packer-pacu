@@ -21,6 +21,7 @@ describe "Dockerfile" do
   describe command("python --version") do
     its(:exit_status) { should eq 0 }
   end
+
   describe command("pip --version") do
     its(:exit_status) { should eq 0 }
   end
