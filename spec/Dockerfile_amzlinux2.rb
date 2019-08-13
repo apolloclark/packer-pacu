@@ -40,9 +40,9 @@ describe "Dockerfile" do
 
 
 
-  it "runs the right version of Ubuntu" do
-    expect(os_version).to include("Ubuntu")
-    expect(os_version).to include("16.04")
+  it "runs the right version of Amazon Linux" do
+    expect(os_version).to include("Amazon Linux")
+    expect(os_version).to include("Linux 2")
   end
 
   it "runs as root user" do
@@ -54,7 +54,6 @@ describe "Dockerfile" do
   describe command("python --version") do
     its(:exit_status) { should eq 0 }
   end
-
   describe command("pip --version") do
     its(:exit_status) { should eq 0 }
   end
